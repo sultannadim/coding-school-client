@@ -1,0 +1,34 @@
+a{
+    text-decoration: none !important;
+}
+.my-nav a{
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 21px;
+    color: #fff;
+    margin-left: 30px;
+    
+}
+.my-logo{
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 700;
+    color: #ffff;
+}
+.my-logo:hover{
+    color: #fff;
+}
+.nav-bg{
+    background-color: #021747;
+}
+.my-nav img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.logo-img{
+    width: 45px;
+    margin-right: 10px;
+}
