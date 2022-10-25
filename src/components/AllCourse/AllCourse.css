@@ -1,0 +1,10 @@
+.course-card img{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    
+}
+.course-card{
+    padding: 25px 0;
+    text-align: left;
+}
