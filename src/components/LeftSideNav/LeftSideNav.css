@@ -1,0 +1,17 @@
+.category-list{
+    width: 100%;
+    min-height: 70vh;
+    padding: 50px ;
+    background-color: #fff;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+    text-align: left;
+    
+
+}
+.category-list a{
+    display: block;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
