@@ -11,10 +11,10 @@ const Courses = () => {
     <section className="py-5 all-courses">
       <div className="container">
         <div className="row">
-          <div className="col-lg-3 col-md-5 mb-md-0 mb-4">
+          <div className="col-lg-3  mb-lg-0 mb-4">
             <LeftSideNav></LeftSideNav>
           </div>
-          <div className="col-lg-9 col-md-7">
+          <div className="col-lg-9 ">
             <div className="row">
               {allCourses.map((allCourse) => (
                 <AllCourse key={allCourse.id} allCourse={allCourse}></AllCourse>

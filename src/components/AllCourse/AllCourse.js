@@ -6,7 +6,7 @@ import "./AllCourse.css";
 const AllCourse = ({ allCourse }) => {
   const { title, img, details, price } = allCourse;
   return (
-    <div className="col-lg-6 mb-4">
+    <div className="col-md-6 mb-4">
       <Link>
         <Card className="w-100 course-card">
           <Card.Img variant="top" src={img} />

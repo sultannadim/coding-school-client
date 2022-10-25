@@ -39,4 +39,8 @@
 @media (min-width: 1200px) and (max-width: 1399.98px) {  }
 
 /*Extra large devices (Extra Extra large desktops, 1400px and up)*/
-@media (min-width: 1400px) {  }
+@media (min-width: 1400px) { 
+    .course-card{
+        min-height: 450px;
+    }
+ }

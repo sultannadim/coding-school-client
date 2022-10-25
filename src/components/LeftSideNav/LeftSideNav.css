@@ -1,11 +1,13 @@
 .category-list{
     width: 100%;
-    min-height: 70vh;
+    min-height: 72.5vh;
     padding: 50px ;
     background-color: #fff;
     box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
     border-radius: 10px;
     text-align: left;
+    position: sticky;
+    top: 48px;
     
 
 }
