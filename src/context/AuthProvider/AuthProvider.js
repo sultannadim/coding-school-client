@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendEmailVerification,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -43,6 +44,9 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithPopup(auth, provider);
   };
+  const emailVarify = () => {
+    return sendEmailVerification(auth.currentUser);
+  };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser === null || currentUser.uid) {
@@ -63,6 +67,7 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     githubLogIn,
     loading,
+    emailVarify,
   };
   return (
     <div>

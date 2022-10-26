@@ -2,11 +2,14 @@ import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [error, setError] = useState("");
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile, emailVarify } =
+    useContext(AuthContext);
   const handelSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -19,12 +22,18 @@ const Register = () => {
       .then((result) => {
         const profile = { displayName: name, photoURL: photoURL };
         updateUserProfile(profile)
-          .then(() => {})
+          .then(() => {
+            emailVarify().then(() => {});
+            toast.error("Please varify your email");
+          })
           .catch((error) => console.error(error));
         const user = result.user;
+
         console.log(user);
         setError("");
+
         form.reset();
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);

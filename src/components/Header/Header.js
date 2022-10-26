@@ -62,7 +62,7 @@ const Header = () => {
 
               {user?.uid ? (
                 <>
-                  <Link onClick={handelLogOut} className="mb-lg-0 mb-3" to="/">
+                  <Link onClick={handelLogOut} className="mb-lg-0 mb-3">
                     Log out
                   </Link>
                 </>

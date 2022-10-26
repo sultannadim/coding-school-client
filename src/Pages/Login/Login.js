@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -24,8 +25,9 @@ const Login = () => {
         const user = result.user;
         if (user.uid) {
           navigate(from, { replace: true });
+          toast.success("Login Successfull");
         } else {
-          console.error("Please varify your email");
+          toast.error("Something went wrong");
         }
       })
       .catch((error) => console.error(error));
@@ -37,8 +39,9 @@ const Login = () => {
         const user = result.user;
         if (user.uid) {
           navigate(from, { replace: true });
+          toast.success("Login Successfull");
         } else {
-          console.error("Please varify your email");
+          toast.error("Something went wrong");
         }
       })
       .catch((error) => console.error(error));
@@ -53,9 +56,10 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         if (user.uid) {
+          toast.success("Login Successfull");
           navigate(from, { replace: true });
         } else {
-          console.error("Please varify your email");
+          toast.error("Please varify your email");
         }
         form.reset();
         setError("");
