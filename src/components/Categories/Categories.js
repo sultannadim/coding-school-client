@@ -6,7 +6,7 @@ const Categories = ({ category }) => {
   const { id, title, img } = category;
   return (
     <div className="col-md-4 col-sm-6 mt-sm-5 mt-3 ">
-      <Link className="category-box">
+      <Link to={`/course/details/${id}`} className="category-box">
         <img src={img} alt="logo" />
         <h4 className="mt-3 text-dark">{title}</h4>
       </Link>

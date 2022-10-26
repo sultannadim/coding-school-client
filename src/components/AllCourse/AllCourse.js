@@ -4,10 +4,10 @@ import Card from "react-bootstrap/Card";
 import "./AllCourse.css";
 
 const AllCourse = ({ allCourse }) => {
-  const { title, img, details, price } = allCourse;
+  const { title, img, details, price, id } = allCourse;
   return (
     <div className="col-md-6 mb-4">
-      <Link>
+      <Link to={`/course/details/${id}`}>
         <Card className="w-100 course-card">
           <Card.Img variant="top" src={img} />
           <Card.Body>
