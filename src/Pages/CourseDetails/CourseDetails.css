@@ -17,3 +17,12 @@
     color: #06132e;
     cursor: pointer;
 }
+.error-page{
+    min-height: 80vh;
+    background-color: #06132e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}

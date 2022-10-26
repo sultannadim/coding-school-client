@@ -9,12 +9,18 @@ import Login from "../Pages/Login/Login";
 import Regestration from "../Pages/Regestration/Regestration";
 import CheckOut from "../Pages/CheckOut/CheckOut";
 import Register from "../Pages/Register/Register";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+
     children: [
+      {
+        path: "*",
+        element: <ErrorPage></ErrorPage>,
+      },
       {
         path: "/",
         loader: () => fetch("http://localhost:5000/categories"),
