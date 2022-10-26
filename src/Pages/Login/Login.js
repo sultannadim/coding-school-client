@@ -1,3 +1,4 @@
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
@@ -9,7 +10,27 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Login = () => {
   const [error, setError] = useState("");
-  const { userLogin } = useContext(AuthContext);
+  const { userLogin, googleLogin, githubLogIn } = useContext(AuthContext);
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+
+  const handelGithubLogIn = () => {
+    githubLogIn(githubProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  const handelGoogleLgoin = () => {
+    googleLogin(googleProvider)
+      .then((result) => {
+        const user = result.user;
+      })
+      .catch((error) => console.error(error));
+  };
+
   const handelSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -20,13 +41,11 @@ const Login = () => {
         const user = result.user;
         form.reset();
         setError("");
-        console.log(user);
       })
       .catch((error) => {
         console.error(error);
         setError(error.message);
       });
-    console.log(email, password);
   };
   return (
     <section className="py-5 checkout">
@@ -69,6 +88,7 @@ const Login = () => {
                 Login
               </Button>
               <Button
+                onClick={handelGoogleLgoin}
                 variant="primary"
                 className="login-btn w-100  fw-bold mb-2"
               >
@@ -76,6 +96,7 @@ const Login = () => {
                 Login With Google
               </Button>
               <Button
+                onClick={handelGithubLogIn}
                 variant="primary"
                 className="login-btn w-100 fw-bold mb-2"
               >

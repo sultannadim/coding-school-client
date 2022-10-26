@@ -5,7 +5,7 @@ import Categories from "../../components/Categories/Categories";
 
 const Home = () => {
   const categories = useLoaderData();
-  console.log(categories);
+
   return (
     <>
       <section className="banner ">
