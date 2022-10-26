@@ -1,28 +1,64 @@
 import React from "react";
+import { useState } from "react";
+import { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Login = () => {
+  const [error, setError] = useState("");
+  const { userLogin } = useContext(AuthContext);
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    userLogin(email, password)
+      .then((result) => {
+        const user = result.user;
+        form.reset();
+        setError("");
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      });
+    console.log(email, password);
+  };
   return (
     <section className="py-5 checkout">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-6 col-md-10">
             <h1 className="fw-bold text-light mb-4">Login</h1>
-            <Form className="bg-light text-start p-sm-5 p-4 rounded-4">
+            <Form
+              onSubmit={handelSubmit}
+              className="bg-light text-start p-sm-5 p-4 rounded-4"
+            >
+              <Form.Text className="text-danger fw-bold ">
+                {error && error}
+              </Form.Text>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label className="fw-bold">Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-                <Form.Text className="text-danger fw-bold ">
-                  We'll never share your email with anyone else.
-                </Form.Text>
+                <Form.Control
+                  required
+                  type="email"
+                  name="email"
+                  placeholder="Enter email"
+                />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label className="fw-bold">Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control
+                  required
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                />
               </Form.Group>
 
               <Button

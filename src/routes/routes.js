@@ -6,7 +6,7 @@ import Courses from "../Pages/Courses/Courses";
 import Faq from "../Pages/Faq/Faq";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
-import Regestration from "../Pages/Regestration/Regestration";
+
 import CheckOut from "../Pages/CheckOut/CheckOut";
 import Register from "../Pages/Register/Register";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
@@ -43,10 +43,7 @@ export const router = createBrowserRouter([
         path: "login",
         element: <Login></Login>,
       },
-      {
-        path: "registration",
-        element: <Regestration></Regestration>,
-      },
+
       {
         path: "course/details/:id",
         loader: ({ params }) =>
