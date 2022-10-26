@@ -1,7 +1,7 @@
 import React from "react";
 import { useLoaderData, Link } from "react-router-dom";
 import "./CheckOut.css";
-import Button from "react-bootstrap/Button";
+
 import Card from "react-bootstrap/Card";
 
 const CheckOut = () => {
