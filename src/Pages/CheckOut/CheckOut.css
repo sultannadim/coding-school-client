@@ -1,0 +1,8 @@
+.checkout{
+    background-color: #06132e;
+    min-height: 80vh;
+}
+.btn-order{
+    background-color: #06132e !important;
+    border: none !important; 
+}

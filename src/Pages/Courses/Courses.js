@@ -6,7 +6,7 @@ import "./Courses.css";
 
 const Courses = () => {
   const allCourses = useLoaderData();
-  console.log(allCourses);
+
   return (
     <section className="py-5 all-courses">
       <div className="container">

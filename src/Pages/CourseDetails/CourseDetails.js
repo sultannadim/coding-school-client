@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 import "./CourseDetails.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -8,7 +8,7 @@ import { FaFilePdf } from "react-icons/fa";
 
 const CourseDetails = () => {
   const singleCourse = useLoaderData();
-  const { title, details, img, category, price } = singleCourse;
+  const { title, details, img, category, price, id } = singleCourse;
   return (
     <section className="course-details py-5">
       <div className="container">
@@ -29,7 +29,9 @@ const CourseDetails = () => {
                   <Card.Title className="mb-3">{title}</Card.Title>
                   <Card.Text className=" mb-3">{details}</Card.Text>
                   <Button variant="primary" className="premium-btn">
-                    Get premium access
+                    <Link to={`/checkout/course/${id}`} className="text-light">
+                      Get premium access
+                    </Link>
                   </Button>
                 </Card.Body>
                 <Card.Footer className="text-dark">
