@@ -23,12 +23,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/",
-        loader: () => fetch("http://localhost:5000/categories"),
+        loader: () => fetch("https://y-three-azure.vercel.app/categories"),
         element: <Home></Home>,
       },
       {
         path: "courses",
-        loader: () => fetch("http://localhost:5000/courses"),
+        loader: () => fetch("https://y-three-azure.vercel.app/courses"),
         element: <Courses></Courses>,
       },
       {
@@ -50,13 +50,13 @@ export const router = createBrowserRouter([
       {
         path: "course/details/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/course/${params.id}`),
+          fetch(`https://y-three-azure.vercel.app/course/${params.id}`),
         element: <CourseDetails></CourseDetails>,
       },
       {
         path: "checkout/course/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/course/${params.id}`),
+          fetch(`https://y-three-azure.vercel.app/course/${params.id}`),
         element: <CheckOut></CheckOut>,
       },
       {
