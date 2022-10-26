@@ -27,7 +27,7 @@ const CheckOut = () => {
                   </p>
                   <p className=" mb-1">
                     <b>
-                      <span className="text-info">Course Name :</span>{" "}
+                      <span className="text-info">Course Title :</span>{" "}
                       <span className="text-success">{title}</span>
                     </b>
                   </p>
