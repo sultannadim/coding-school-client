@@ -5,7 +5,7 @@ import { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Login = () => {
@@ -14,11 +14,19 @@ const Login = () => {
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
+
   const handelGithubLogIn = () => {
     githubLogIn(githubProvider)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        if (user.uid) {
+          navigate(from, { replace: true });
+        } else {
+          console.error("Please varify your email");
+        }
       })
       .catch((error) => console.error(error));
   };
@@ -27,6 +35,11 @@ const Login = () => {
     googleLogin(googleProvider)
       .then((result) => {
         const user = result.user;
+        if (user.uid) {
+          navigate(from, { replace: true });
+        } else {
+          console.error("Please varify your email");
+        }
       })
       .catch((error) => console.error(error));
   };
@@ -39,6 +52,11 @@ const Login = () => {
     userLogin(email, password)
       .then((result) => {
         const user = result.user;
+        if (user.uid) {
+          navigate(from, { replace: true });
+        } else {
+          console.error("Please varify your email");
+        }
         form.reset();
         setError("");
       })

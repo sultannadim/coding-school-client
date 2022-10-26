@@ -10,6 +10,7 @@ import Login from "../Pages/Login/Login";
 import CheckOut from "../Pages/CheckOut/CheckOut";
 import Register from "../Pages/Register/Register";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import PrivateRouter from "./PrivateRouter";
 
 export const router = createBrowserRouter([
   {
@@ -52,9 +53,14 @@ export const router = createBrowserRouter([
       },
       {
         path: "checkout/course/:id",
+
+        element: (
+          <PrivateRouter>
+            <CheckOut></CheckOut>
+          </PrivateRouter>
+        ),
         loader: ({ params }) =>
           fetch(`https://y-three-azure.vercel.app/course/${params.id}`),
-        element: <CheckOut></CheckOut>,
       },
       {
         path: "register",
