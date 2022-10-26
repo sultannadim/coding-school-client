@@ -17,7 +17,7 @@ const CourseDetails = () => {
             <div className="details-heading">
               <h1 className="fw-bold text-light mb-5">
                 All Details About
-                <span className="text-danger"> {category}</span>
+                <span className="text-danger"> {category}</span> Course.
               </h1>
 
               <Card>

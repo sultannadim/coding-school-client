@@ -16,6 +16,10 @@
     .banner{
         height: 300px;
     }
+    .detail-img{
+        width: 200px;
+        height: 200px;
+    }
  }
 
 /*Small devices (landscape phones, 576px and up)*/
