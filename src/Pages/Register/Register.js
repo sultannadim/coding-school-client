@@ -1,23 +1,32 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { FaGoogle, FaGithub } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   return (
     <section className="py-5 checkout">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-6 col-md-10">
-            <h1 className="fw-bold text-light mb-4">Login</h1>
+            <h1 className="fw-bold text-light mb-4">Registration</h1>
             <Form className="bg-light text-start p-sm-5 p-4 rounded-4">
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label className="fw-bold">Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Label className="fw-bold">User Name</Form.Label>
+                <Form.Control type="text" placeholder="User Name" />
                 <Form.Text className="text-danger fw-bold ">
                   We'll never share your email with anyone else.
                 </Form.Text>
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label className="fw-bold">Photo URL</Form.Label>
+                <Form.Control type="text" placeholder="Photo URL" />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label className="fw-bold">Email address</Form.Label>
+                <Form.Control type="email" placeholder="Enter email" />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -30,26 +39,12 @@ const Login = () => {
                 className="login-btn fw-bold w-100 my-3"
                 type="submit"
               >
-                Login
+                Registration
               </Button>
-              <Button
-                variant="primary"
-                className="login-btn w-100  fw-bold mb-2"
-              >
-                <FaGoogle className="me-2"></FaGoogle>
-                Login With Google
-              </Button>
-              <Button
-                variant="primary"
-                className="login-btn w-100 fw-bold mb-2"
-              >
-                <FaGithub className="me-2"></FaGithub>
-                Login With Github
-              </Button>
+
               <p className="text-center m-0">
                 <b>
-                  Do not have an account? Please
-                  <Link to="/register"> Registration</Link>
+                  Already have an account? Please <Link to="/login">Login</Link>
                 </b>
               </p>
             </Form>
@@ -60,4 +55,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
