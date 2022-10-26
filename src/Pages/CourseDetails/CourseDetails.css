@@ -1,4 +1,19 @@
 .course-details{
-    min-height: 80vh;
+    
     background-color: #06132e;
+}
+.premium-btn{
+    background-color: #06132e !important;
+    border: none !important;
+    font-weight: 600 !important;
+}
+.detail-img{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+}
+.pdf-file{
+    font-size: 30px;
+    color: #06132e;
+    cursor: pointer;
 }
