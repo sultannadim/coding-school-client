@@ -1,10 +1,10 @@
 1. npm install react-bootstrap bootstrap
 2. npm install react-router-dom
 3. npm install react-icons --save
-
 4. npm install firebase
+
 5. npm install react-hot-toast
 6. npm install @react-pdf/renderer --save --force
-
+7. npm install react-to-pdf
 
 api server :  https://y-three-azure.vercel.app
