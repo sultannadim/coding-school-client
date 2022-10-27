@@ -3,7 +3,8 @@
 3. npm install react-icons --save
 
 4. npm install firebase
-5.npm install react-hot-toast
+5. npm install react-hot-toast
+6. npm install @react-pdf/renderer --save --force
 
 
 api server :  https://y-three-azure.vercel.app
