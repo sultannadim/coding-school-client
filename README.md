@@ -2,7 +2,7 @@
 
 ## Live Link
 
-Coding School Application -> [Link](https://sultannadim.com)
+Coding School Application -> [Link](https://coding-school-60248.web.app/)
 
 ## Features
 
